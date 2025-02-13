@@ -7071,6 +7071,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-gl@npm:^15.0.4, expo-gl@npm:~15.0.4":
+  version: 15.0.4
+  resolution: "expo-gl@npm:15.0.4"
+  dependencies:
+    invariant: ^2.2.4
+  peerDependencies:
+    expo: "*"
+    react: "*"
+    react-native: "*"
+    react-native-web: "*"
+  peerDependenciesMeta:
+    react-native-web:
+      optional: true
+  checksum: 8710c46b35a520d565dbdb311dc8fbb42258927d68088b2de063acc27bb3fcf2d59940ce86a80c8b3a159893e322773fe31dfd7b0fbf8821bfa0d9f6ebce0fb6
+  languageName: node
+  linkType: hard
+
 "expo-keep-awake@npm:~14.0.2":
   version: 14.0.2
   resolution: "expo-keep-awake@npm:14.0.2"
@@ -14855,6 +14872,7 @@ __metadata:
     "@react-native/metro-config": 0.77.0
     "@react-native/typescript-config": 0.77.0
     expo: ^52.0.0
+    expo-gl: ~15.0.4
     react: 18.3.1
     react-native: 0.77.0
     react-native-builder-bob: ^0.36.0
@@ -14878,6 +14896,7 @@ __metadata:
     eslint: ^8.51.0
     eslint-config-prettier: ^9.0.0
     eslint-plugin-prettier: ^5.0.1
+    expo-gl: ^15.0.4
     jest: ^29.7.0
     prettier: ^3.0.3
     react: 18.3.1

@@ -202,6 +202,7 @@
   },
   "dependencies": {
     "@react-three/fiber": "^8.17.14",
+    "expo-gl": "^15.0.4",
     "three": "^0.173.0"
   }
 }
