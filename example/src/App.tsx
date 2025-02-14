@@ -4,11 +4,13 @@ import React, { useMemo, useRef } from "react";
 const THREE = require('three');
 
 const Images = {
-  grass: require('../assets/grass.jpg')
+  grass: require('../assets/grass.jpg'),
+  tree: require('../assets/tree.png')
 };
 
 export default function App() {
   return (
+    //camera={{ position: [0, 1, 0], rotation: [0, 0, 0] }}
     <Canvas camera={{ position: [0, 1, 0], rotation: [0, 0, 0] }}>
       <Sky
         distance={1000} // Controls how far the sky goes
@@ -19,14 +21,13 @@ export default function App() {
       <ambientLight intensity={0.5} />
       <directionalLight position={[1, 1, 1]} intensity={0.8} />
       <Ground hSize={10} vSize={40} />
+      <Background/>
     </Canvas>
   );
 }
 
 
 const Ground = ({ hSize = 10, vSize = 10 }) => {
-  const groundRef = useRef(null);
-
   const grassTexture = useLoader(THREE.TextureLoader, Images.grass);
   // Repeat the texture to cover the ground
   grassTexture.wrapS = THREE.RepeatWrapping;
@@ -38,9 +39,28 @@ const Ground = ({ hSize = 10, vSize = 10 }) => {
   }, [grassTexture]);
 
   return (
-    <mesh ref={groundRef} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[hSize, vSize]} />
       <primitive object={groundMaterial} />
     </mesh>
   );
 };
+
+const Background = () => {
+  const texture = useLoader(THREE.TextureLoader, Images.tree);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.wrapS = THREE.ClampToEdgeWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+  texture.repeat.set(1, 1);
+
+  const material = useMemo(() => {
+    return new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+  }, [texture]);
+
+  return (
+    <mesh position={[0, 1, -16]} rotation={[0, 0, 0]}>
+      <planeGeometry args={[17, 2]} />
+      <primitive object={material} />
+    </mesh>
+  );
+}
