@@ -82,8 +82,8 @@ android {
     main {
       if (isNewArchitectureEnabled()) {
           java.srcDirs += [
-            "generated/java",
-            "generated/jni"
+            "D:\\MyProjects\\RNs\\test3d\\v3d\\android\\generated\\java",
+            "D:\\MyProjects\\RNs\\test3d\\v3d\\android\\generated\\jni"
           ]
       }
     }

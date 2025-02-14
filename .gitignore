@@ -1,2 +1,5 @@
 /node_modules
 /example/android/.gradle
+/example/android/build
+/example/android/app/build
+/example/node_modules

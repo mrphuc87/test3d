@@ -15,4 +15,8 @@ module.exports = getConfig(getDefaultConfig(__dirname), {
   root,
   pkg,
   project: __dirname,
+  resolver: {
+    sourceExts: ['js', 'jsx', 'json', 'ts', 'tsx', 'cjs', 'mjs'],
+    assetExts: ['glb', 'gltf', 'png', 'jpg'],
+  },
 });

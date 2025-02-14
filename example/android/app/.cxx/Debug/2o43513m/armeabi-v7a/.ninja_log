@@ -1,0 +1,21 @@
+# ninja log v5
+5	77	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+7	6899	7612041142583306	CMakeFiles/appmodules.dir/D_/MyProjects/RNs/test3d/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	95dc153a43c78574
+1	7844	7612041152009473	CMakeFiles/appmodules.dir/OnLoad.cpp.o	c1b13acd6bc01e96
+7845	8064	7612041154415084	D:/MyProjects/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/2o43513m/obj/armeabi-v7a/libappmodules.so	21e840c595812677
+3	45	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	34	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+2	37	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	35	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+6	63	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	46	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	37	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	32	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	29	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	29	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+2	30	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	31	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	33	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	32	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+3	31	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
+4	41	0	D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/armeabi-v7a/CMakeFiles/cmake.verify_globs	231313b89c4eddcd
