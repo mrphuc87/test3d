@@ -3,3 +3,5 @@
 /example/android/build
 /example/android/app/build
 /example/node_modules
+/example/.idea
+/example/android/.idea

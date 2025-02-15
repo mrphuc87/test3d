@@ -1,0 +1,9 @@
+# ninja log v5
+5801	5926	7613378874810627	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/x86/libappmodules.so	d408ba8aa82af0f8
+3	24	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86/CMakeFiles/cmake.verify_globs	7a156cd91d7474af
+0	5387	7613378869340651	CMakeFiles/appmodules.dir/E_/WORK/RNs/test3d/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	d0ad7c0166ff2cc
+4	5801	7613378873450946	CMakeFiles/appmodules.dir/OnLoad.cpp.o	1de9c7c7d5481746
+2	23	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86/CMakeFiles/cmake.verify_globs	7a156cd91d7474af
+9	4045	7613394111960437	CMakeFiles/appmodules.dir/OnLoad.cpp.o	1de9c7c7d5481746
+4045	4312	7613394114716121	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/x86/libappmodules.so	d408ba8aa82af0f8
+1	22	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86/CMakeFiles/cmake.verify_globs	7a156cd91d7474af
