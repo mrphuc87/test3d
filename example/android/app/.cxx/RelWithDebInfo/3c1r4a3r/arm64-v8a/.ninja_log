@@ -1,0 +1,5 @@
+# ninja log v5
+46	233	0	E:/WORK/RNs/test3d/example/android/app/.cxx/RelWithDebInfo/3c1r4a3r/arm64-v8a/CMakeFiles/cmake.verify_globs	89cce7cbe433549c
+1	8581	7614252580341818	CMakeFiles/appmodules.dir/E_/WORK/RNs/test3d/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	91c4426a406fe277
+5	10163	7614252597581543	CMakeFiles/appmodules.dir/OnLoad.cpp.o	23dcd2764dd7c168
+10163	10352	7614252599621537	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/RelWithDebInfo/3c1r4a3r/obj/arm64-v8a/libappmodules.so	b83acca85d4b630c

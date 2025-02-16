@@ -137,17 +137,41 @@ type BallProps = {
     force?: any;
 };
 
-const Ball = ({ position = new THREE.Vector3(0, 1, -5), velocity = new THREE.Vector3(0, 0, 0), mass = 1, force = new THREE.Vector3(0, 0, 0) }: BallProps) => {
+const Ball = ({ position = new THREE.Vector3(0, .125, -2), velocity = new THREE.Vector3(0, 0, 0), mass = 1, force = new THREE.Vector3(0, 0, 0) }: BallProps) => {
     const [ballPosition, setBallPosition] = useState(position);
     const [ballVelocity, setBallVelocity] = useState(velocity);
+    const [forceVector, setForceVector] = useState(force);
+
+    const gravity = new THREE.Vector3(0, -9.8, 0);
+    const timeRef = useRef(0);
+    
 
     useEffect(() => {
-        const animate = () => {
-            const acceleration = force.clone().divideScalar(mass);
+        const animate = (currentTime: number) => {
+            if (timeRef.current === 0) {
+                timeRef.current = currentTime;
+                return;
+            };
+            const deltaTime = (currentTime - timeRef.current)/1000000;
+            timeRef.current = currentTime;
+            
+            console.log('Time: ' + deltaTime);
+            const totalForce = forceVector.clone().add(gravity.clone().multiplyScalar(mass)).multiplyScalar(deltaTime);
+            console.log('TotalForce: ' + JSON.stringify(totalForce));
+            const acceleration = totalForce.clone().divideScalar(mass);
+            console.log('Acceleration: ' + JSON.stringify(acceleration));
             const newVelocity = ballVelocity.clone().add(acceleration);
+            console.log('NewVelocity: ' + JSON.stringify(newVelocity));
             const newPosition = ballPosition.clone().add(newVelocity);
+            console.log('NewPosition: ' + JSON.stringify(newPosition));
+            if (newPosition.y < 0.125) {
+                newPosition.y = 0.125;
+                newVelocity.y = 0;
+                return;
+            }
             setBallPosition(newPosition);
             setBallVelocity(newVelocity);
+            setForceVector(new THREE.Vector3(0, 0, 0)); // reset force after applying
         };
 
         const animationFrame = requestAnimationFrame(animate);
@@ -156,13 +180,16 @@ const Ball = ({ position = new THREE.Vector3(0, 1, -5), velocity = new THREE.Vec
 
     return (
         <mesh position={ballPosition} onClick={(e) => {
-            const { x, y } = e.point;
-            const forceVector = new THREE.Vector3(x, y, 0).normalize().multiplyScalar(10);
-            forceVector.z = 0;
-            force.copy(forceVector);
+            // const { x, y } = e.point;
+            // const forceVector = new THREE.Vector3(x, y, 0).normalize().multiplyScalar(10);
+            // forceVector.z = 0;
+            // console.log('ForceVector: '+ JSON.stringify(forceVector));
+            const v = new THREE.Vector3(0, 16.25, -7);
+            setForceVector(v);
+            console.log('Force: ' + JSON.stringify(v));
         }}>
-            <sphereGeometry args={[0.5, 32, 32]} />
-            <meshStandardMaterial color={'blue'} />
+            <sphereGeometry args={[0.125, 32, 32]} />
+            <meshStandardMaterial color={'hotpink'} />
         </mesh>
     );
 };
