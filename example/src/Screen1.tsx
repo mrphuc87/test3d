@@ -1,8 +1,6 @@
-import { Canvas, useLoader } from "@react-three/fiber/native";
+import { Canvas, useLoader, Vector3 } from "@react-three/fiber/native";
 import { Sky, Sphere, useAnimations, useGLTF } from '@react-three/drei/native';
-import React, { useEffect, useMemo, useRef } from "react";
-import { LoopRepeat } from "three";
-// import { Physics } from "@react-three/cannon";
+import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 const THREE = require('three');
 
 const Images = {
@@ -10,7 +8,7 @@ const Images = {
     tree: require('../assets/tree.png')
 };
 const Flags = {
-    flag1: require('../assets/flag1.glb'),
+    flag1: require('../assets/golf_flag.glb'),
     flag2: require('../assets/flag2.glb')
 };
 
@@ -27,12 +25,10 @@ export default function Screen1() {
             <directionalLight position={[1, 1, 1]} intensity={0.8} />
             <Ground hSize={10} vSize={40} />
             <Background />
-            {/* <Physics>
-                <Sphere args={[0.5]} position={[0, 1, -5]} >
-                    <meshStandardMaterial color={'blue'} />
-                </Sphere>
-            </Physics> */}
-            <Flag />
+            <Suspense>
+                <Flag />
+            </Suspense>
+            <Ball />
         </Canvas>
     );
 }
@@ -53,7 +49,6 @@ const Ground = ({ hSize = 10, vSize = 10 }) => {
         <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow={true}>
             <planeGeometry args={[hSize, vSize]} />
             <primitive object={groundMaterial} />
-            <shadowMaterial opacity={0.5} />
         </mesh>
     );
 };
@@ -77,43 +72,97 @@ const Background = () => {
     );
 }
 
+// https://gltf.pmnd.rs/
 const Flag = () => {
     const { nodes, materials, animations } = useGLTF(Flags.flag1);
     const group = useRef(null)
-    const { actions } = useAnimations(animations, group);
-    console.log('animations names: ', actions);
-    //     const { actions, names } = useAnimations(animations, group);
-    //   console.log('animations names: ', names);
-    //   // animations names:  ["Armature|Death", "Armature|Idle", "Armature|Jump", "Armature|Run", "Armature|Walk", "Armature|WalkSlow"]
-      useEffect(() => {
-        // Play the "Idle" animation
-        const idleAction = actions['Armature_Flag|Wind Detailed'];
-        if (idleAction) {
-          idleAction
-            .reset()
-            .setLoop(LoopRepeat, Infinity) // Set loop mode and infinite repetitions
-            .fadeIn(0.5)
-            .play();
+    const { actions, names } = useAnimations(animations, group);
+    useEffect(() => {
+        if (actions[names[0]] != null) {
+            actions[names[0]]!.reset().fadeIn(0.5).play();
         }
         return () => {
-          // Stop the "Idle" animation when the component is unmounted
-          if (idleAction) idleAction.fadeOut(0.5);
+            if (actions[names[0]] != null) {
+                actions[names[0]]!.fadeOut(0.5);
+            }
         };
-      }, [actions]);
-    
+    }, [actions]);
+
     return (
-        <group ref={group} dispose={null} scale={.75} position={[0, 2, -15]}>
-            <group name="Scene">
-                <group name="Armature_Flag">
-                    <skinnedMesh
-                        name="Flag_Rigged"
-                        geometry={nodes.Flag_Rigged.geometry}
-                        material={materials.Flag_Dirty}
-                        skeleton={nodes.Flag_Rigged.skeleton}
-                    />
-                    <primitive object={nodes.Node} />
+        <group ref={group} dispose={null} position={[0, 1.5, -8]}>
+            <group name="Sketchfab_Scene">
+                <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.284}>
+                    <group name="ab6305f6efde404684e7d3380aa836ffabccleanermaterialmergergles">
+                        <group name="Object_2" rotation={[Math.PI / 2, 0, 0]}>
+                            <group name="Object_3">
+                                <group name="Object_4" position={[1.132, -3.052, 0]}>
+                                    <group name="TimeframeMainGroup">
+                                        <group name="Object_6">
+                                            <mesh
+                                                name="Cylinder_001_6_0"
+                                                castShadow
+                                                receiveShadow
+                                                geometry={nodes.Cylinder_001_6_0.geometry}
+                                                material={materials.Cylinder_001}
+                                            />
+                                        </group>
+                                    </group>
+                                </group>
+                                <group name="Object_8" rotation={[Math.PI / 2, 0, 0]}>
+                                    <group name="MorphMainGroup">
+                                        <mesh
+                                            name="Plane"
+                                            castShadow
+                                            receiveShadow
+                                            geometry={nodes.Plane.geometry}
+                                            material={materials.Plane}
+                                            morphTargetDictionary={nodes.Plane.morphTargetDictionary}
+                                            morphTargetInfluences={nodes.Plane.morphTargetInfluences}
+                                        />
+                                    </group>
+                                </group>
+                            </group>
+                        </group>
+                    </group>
                 </group>
             </group>
         </group>
     )
 }
+
+type BallProps = {
+    position?: any;
+    velocity?: any;
+    mass?: number;
+    force?: any;
+};
+
+const Ball = ({ position = new THREE.Vector3(0, 1, -5), velocity = new THREE.Vector3(0, 0, 0), mass = 1, force = new THREE.Vector3(0, 0, 0) }: BallProps) => {
+    const [ballPosition, setBallPosition] = useState(position);
+    const [ballVelocity, setBallVelocity] = useState(velocity);
+
+    useEffect(() => {
+        const animate = () => {
+            const acceleration = force.clone().divideScalar(mass);
+            const newVelocity = ballVelocity.clone().add(acceleration);
+            const newPosition = ballPosition.clone().add(newVelocity);
+            setBallPosition(newPosition);
+            setBallVelocity(newVelocity);
+        };
+
+        const animationFrame = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrame);
+    }, [ballVelocity, ballPosition, force, mass]);
+
+    return (
+        <mesh position={ballPosition} onClick={(e) => {
+            const { x, y } = e.point;
+            const forceVector = new THREE.Vector3(x, y, 0).normalize().multiplyScalar(10);
+            forceVector.z = 0;
+            force.copy(forceVector);
+        }}>
+            <sphereGeometry args={[0.5, 32, 32]} />
+            <meshStandardMaterial color={'blue'} />
+        </mesh>
+    );
+};
