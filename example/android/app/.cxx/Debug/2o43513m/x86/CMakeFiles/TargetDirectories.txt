@@ -1,3 +1,0 @@
-D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/x86/CMakeFiles/appmodules.dir
-D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/x86/CMakeFiles/edit_cache.dir
-D:/MyProjects/RNs/test3d/example/android/app/.cxx/Debug/2o43513m/x86/CMakeFiles/rebuild_cache.dir

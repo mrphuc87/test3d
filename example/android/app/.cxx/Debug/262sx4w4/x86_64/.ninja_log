@@ -1,9 +1,10 @@
 # ninja log v5
-2	25	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
-3	5667	7613379374553814	CMakeFiles/appmodules.dir/E_/WORK/RNs/test3d/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	4b466113d825ab37
-1	5957	7613379377464114	CMakeFiles/appmodules.dir/OnLoad.cpp.o	ea85570633f89230
-5957	6153	7613379379543783	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/x86_64/libappmodules.so	7ad5aa9f0318686e
-1	24	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
-11	4038	7613394175037820	CMakeFiles/appmodules.dir/OnLoad.cpp.o	ea85570633f89230
-4038	4320	7613394177944553	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/x86_64/libappmodules.so	7ad5aa9f0318686e
-1	22	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
+4	32	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
+1	3976	7613838120006837	CMakeFiles/appmodules.dir/E_/WORK/RNs/test3d/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	4b466113d825ab37
+3	4358	7613838123820540	CMakeFiles/appmodules.dir/OnLoad.cpp.o	ea85570633f89230
+4359	4633	7613838126664277	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/x86_64/libappmodules.so	7ad5aa9f0318686e
+2	36	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
+3	38	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
+3	26	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
+3	24	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5
+3	26	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/x86_64/CMakeFiles/cmake.verify_globs	ea343cab4f78dbc5

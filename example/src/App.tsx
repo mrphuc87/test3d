@@ -4,7 +4,7 @@ import Screen1 from "./Screen1";
 import Screen2 from "./Screen2";
 
 export default function App() {
-  const [screen, setScreen] = useState(2)
+  const [screen, setScreen] = useState(1)
   return (
     <View style={styles.container}>
       <View style={styles.canvasContainer}>

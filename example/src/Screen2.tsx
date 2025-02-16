@@ -3,10 +3,12 @@ import { Canvas, ThreeEvent, useLoader, Vector3 } from "@react-three/fiber/nativ
 import React, { useEffect, useMemo, useState } from "react";
 const THREE = require('three');
 
+// Font for drawing text
 const Fonts = {
     helvetiker: require('../assets/helvetiker_regular.typeface.json')
 };
 
+// Dummy points
 const chars = "ABCDEFGHIJKLMNO";
 const points: any[][] = [];
 for (let i = 0; i < 5; i++) {
@@ -16,7 +18,7 @@ for (let i = 0; i < 5; i++) {
 export default function Screen2() {
     const [selected, setSelected] = useState<number | null>(null);
     const [drawing, setDrawing] = useState(false);
-    const [destPosition, setDestPosition] = useState<Vector3 | null>(null);
+    const [destPosition, setDestPosition] = useState<Vector3 | null>(null); // Position of selected Point in WorldCoordinate
 
     return (
         <Canvas style={{ backgroundColor: "black" }} camera={{ position: [0, 10, 0], rotation: [0, 0, 0] }}>
@@ -45,6 +47,7 @@ export default function Screen2() {
     );
 };
 
+/// Component for Point with Text in center
 type CircleWithTextProps = {
     position: any;
     text: any;
@@ -81,22 +84,20 @@ const CenteredText = ({ text }: { text: string }) => {
     );
 };
 
+/// Draw line with animating
 type AnimatedLineProps = {
     position: Vector3;
     onDone?: () => void;
 };
 const AnimatedLine = ({ position, onDone }: AnimatedLineProps) => {
-    console.log('AnimatedLine: ' + JSON.stringify(position));
     const [progress, setProgress] = useState(0);
     useEffect(() => {
         setProgress(0);
     }, [position]);
 
     useEffect(() => {
-        console.log('useEffect')
         const animation = () => {
             setProgress((prevProgress) => {
-                console.log('Draw line ' + prevProgress);
                 if (prevProgress >= 1) {
                     if (onDone) {
                         onDone();
@@ -112,7 +113,6 @@ const AnimatedLine = ({ position, onDone }: AnimatedLineProps) => {
 
     const interpolatedPosition = useMemo(() => {
         const p = new THREE.Vector3().copy(position).multiplyScalar(progress);
-        console.log('interpolatedPosition: ' + JSON.stringify(p));
         return p;
     }, [progress, position]);
 

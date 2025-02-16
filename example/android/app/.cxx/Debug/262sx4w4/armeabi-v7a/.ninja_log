@@ -1,9 +1,10 @@
 # ninja log v5
-3	23	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
-1	3531	7613378773434828	CMakeFiles/appmodules.dir/E_/WORK/RNs/test3d/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	facd5eb75a9ae66
-3946	4077	7613378778994842	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/armeabi-v7a/libappmodules.so	e1fb46f641b30095
-3	3945	7613378777544864	CMakeFiles/appmodules.dir/OnLoad.cpp.o	23d065f4abd5ab06
-1	70	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
-11	3877	7613394048207208	CMakeFiles/appmodules.dir/OnLoad.cpp.o	23d065f4abd5ab06
-3878	4150	7613394051003386	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/armeabi-v7a/libappmodules.so	e1fb46f641b30095
-1	22	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
+3	27	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
+3	3635	7613837946568725	CMakeFiles/appmodules.dir/E_/WORK/RNs/test3d/example/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	facd5eb75a9ae66
+0	4044	7613837950642246	CMakeFiles/appmodules.dir/OnLoad.cpp.o	23d065f4abd5ab06
+4045	4299	7613837953287882	E:/WORK/RNs/test3d/example/android/app/build/intermediates/cxx/Debug/262sx4w4/obj/armeabi-v7a/libappmodules.so	e1fb46f641b30095
+3	47	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
+3	37	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
+3	26	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
+2	24	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
+3	24	0	E:/WORK/RNs/test3d/example/android/app/.cxx/Debug/262sx4w4/armeabi-v7a/CMakeFiles/cmake.verify_globs	23f62f813f88e368
